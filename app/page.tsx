@@ -1,5 +1,11 @@
 import Header from "./ui/header";
+import Hero from "./components/hero";
 
 export default function Home() {
-  return <Header></Header>;
+  return (
+    <>
+      <Header />
+      <Hero />
+    </>
+  );
 }
