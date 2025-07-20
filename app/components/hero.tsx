@@ -103,7 +103,7 @@ function Hero() {
   );
 
   return (
-    <section className="bg-black min-h-screen flex items-center justify-center px-6  ">
+    <section className=" min-h-screen flex items-center justify-center px-6  ">
       <Particles
         id="tsparticles"
         particlesLoaded={particlesLoaded}
@@ -127,8 +127,8 @@ function Hero() {
           </button>
         </div>
       </div>
-      <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-full max-w-lg  z-10">
-        <div className="flex gap-1">
+      <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-lg w-full max-w-lg  z-10  hidden sm:block not-[]:">
+        <div className="flex gap-1 mb-2">
           <div className="w-3 h-3 bg-red-600 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-600 rounded-full"></div>
           <div className="w-3 h-3 bg-green-600 rounded-full"></div>
