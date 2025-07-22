@@ -27,17 +27,8 @@ function Hero() {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-  };
-
   const options: ISourceOptions = useMemo(
     () => ({
-      background: {
-        color: {
-          value: "",
-        },
-      },
       fpsLimit: 120,
       interactivity: {
         events: {
@@ -101,17 +92,31 @@ function Hero() {
     }),
     []
   );
+  const [text, setText] = useState("");
+  const fullText = " Zakariae Elmoufid";
+  const typingSpeed = 100;
+
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setText((prev) => prev + fullText[index]);
+      index++;
+      if (index === fullText.length - 1) clearInterval(interval);
+    }, typingSpeed);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section className=" min-h-screen flex items-center justify-center px-6  ">
-      <Particles
-        id="tsparticles"
-        particlesLoaded={particlesLoaded}
-        options={options}
-      />
+    <section className=" min-h-screen flex items-center justify-center px-6 ">
+      <Particles id="tsparticles" options={options} />
       <div className="max-w-[500px] z-10">
         <h2 className="font-bold   text-xl text-white mb-2">
-          Hi, I'm <span className="highlight">Zakariae Elmoufid</span>
+          Hi, I'm {""}
+          <span className="highlight ">
+            {text}
+            <span className="animate-pulse">|</span>
+          </span>
         </h2>
         <p className="text-white mb-2">
           Full Stack Developer specializing in creating exceptional digital

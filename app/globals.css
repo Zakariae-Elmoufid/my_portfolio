@@ -40,7 +40,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: larger;
+  /* font-size: larger; */
 }
 @keyframes typewriter {
   0%,
